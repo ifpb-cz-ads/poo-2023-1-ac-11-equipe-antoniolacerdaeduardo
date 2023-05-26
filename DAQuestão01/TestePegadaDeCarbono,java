@@ -1,0 +1,33 @@
+import java.util.ArrayList;
+
+public class TestePegadaDeCarbono {
+    public static void main(String[] args) {
+        ArrayList<PegadaDeCarbono> pegadas = new ArrayList<>();
+        Bicicleta bicicleta = new Bicicleta("Caloi", 48.56);
+        Carro carro = new Carro("Marea", 58.6);
+        Edificio edificio = new Edificio("Igreja", 18000);
+
+        pegadas.add(edificio);
+        pegadas.add(bicicleta);
+        pegadas.add(carro);
+
+        for (PegadaDeCarbono objeto : pegadas) {
+            if(objeto instanceof Edificio) {
+                Edificio predio =  (Edificio)objeto;
+                System.out.println("Edificio: " + predio.getTipo());
+                System.out.println("Pegada de Carbono: " + predio.getPegadaDeCarbono());
+                System.out.println();
+            }else if(objeto instanceof Bicicleta){
+                Bicicleta bike = (Bicicleta)objeto;
+                System.out.println("Bicicleta: " + bike.getModelo());
+                System.out.println("Pegada de Carbono: " + bike.getPegadaDeCarbono());
+                System.out.println();
+            }else if(objeto instanceof Carro){
+                Carro carro = (Carro)objeto;
+                System.out.println("Carro: " + carro.getModelo());
+                System.out.println("Pegada de Carbono: " + carro.getPegadaDeCarbono());
+                System.out.println();
+            }
+        }
+    }
+}
